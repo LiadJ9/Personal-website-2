@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#ff4500',
+        'matte-black': '#252525',
         secondary: '#00ff00',
       },
       fontSize: {
