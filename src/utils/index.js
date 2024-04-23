@@ -1,0 +1,1 @@
+export { randomArrayItem } from './common';

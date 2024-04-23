@@ -5,7 +5,12 @@ export default {
     extend: {
       colors: {
         'matte-black': '#252525',
-        secondary: '#00ff00',
+        'text-white': '#F4F4F4',
+        'darkest-black': '#0C0404',
+      },
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+        typewriter: ['Special Elite', 'Montserrat', 'sans-serif'],
       },
       fontSize: {
         base: '1em',
