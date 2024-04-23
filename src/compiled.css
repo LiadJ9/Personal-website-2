@@ -578,6 +578,50 @@ video {
   top: 6rem;
 }
 
+.top-12 {
+  top: 3rem;
+}
+
+.top-32 {
+  top: 8rem;
+}
+
+.top-44 {
+  top: 11rem;
+}
+
+.top-48 {
+  top: 12rem;
+}
+
+.top-56 {
+  top: 14rem;
+}
+
+.top-64 {
+  top: 16rem;
+}
+
+.top-80 {
+  top: 20rem;
+}
+
+.right-12 {
+  right: 3rem;
+}
+
+.right-32 {
+  right: 8rem;
+}
+
+.right-44 {
+  right: 11rem;
+}
+
+.right-48 {
+  right: 12rem;
+}
+
 .z-0 {
   z-index: 0;
 }

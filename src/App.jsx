@@ -7,12 +7,12 @@ import './compiled.css';
 function App() {
   const [canInit, setCanInit] = useState(false);
   const lines = [
-    { r: 24, t: 24 },
-    { r: 12, t: 80 },
-    { r: 32, t: 44 },
-    { r: 44, t: 56 },
-    { r: 48, t: 64 },
-    { r: 56, t: 72 },
+    { r: 'right-24', t: 'top-24' },
+    { r: 'right-12', t: 'top-80' },
+    { r: 'right-32', t: 'top-44' },
+    { r: 'right-44', t: 'top-56' },
+    { r: 'right-48', t: 'top-64' },
+    { r: 'right-24', t: 'top-56' },
   ];
 
   {
@@ -49,12 +49,14 @@ function App() {
       >
         {canInit && (
           <>
-            {lines.map(({ r, t }, i) => (
-              <Line
-                key={i}
-                className={`absolute h-64 right-${r} top-${t} rounded-lg`}
-              />
-            ))}
+            {lines.map(({ r, t }, i) => {
+              return (
+                <Line
+                  key={i}
+                  className={`absolute h-64 ${r} ${t} rounded-lg`}
+                />
+              );
+            })}
             <motion.div
               initial={{ y: -300 }}
               animate={{ y: 0 }}
