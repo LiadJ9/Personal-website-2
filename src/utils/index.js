@@ -1,1 +1,1 @@
-export { randomArrayItem } from './common';
+export { randomArrayItem, randomSpliceArray } from './common';

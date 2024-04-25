@@ -1,38 +1,37 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { NavBar, TypeWriter, Cube, Line } from './components';
+import { NavBar, TypeWriter, Line } from './components';
 import { TYPE_WORDS } from './consts';
 import './compiled.css';
+import { randomSpliceArray } from './utils';
 
 function App() {
   const [canInit, setCanInit] = useState(false);
-  const lines = [
-    { r: 'right-24', t: 'top-24' },
-    { r: 'right-12', t: 'top-80' },
-    { r: 'right-32', t: 'top-44' },
-    { r: 'right-44', t: 'top-56' },
-    { r: 'right-48', t: 'top-64' },
-    { r: 'right-24', t: 'top-56' },
-  ];
 
-  {
-    /* <Cube
-              className='absolute top-24 right-24'
-              animate={{
-                transition: {
-                  repeat: Infinity,
-                  duration: 0.5,
-                  repeatType: 'reverse',
-                  type: 'tween',
-                },
-                animate: {
-                  rotate: [0, 20],
-                  scale: [0.95, 1],
-                  borderRadius: [15, 10],
-                },
-              }}
-            /> */
-  }
+  const yAlign = [
+    '-top-32',
+    '-top-24',
+    '-top-12',
+    '-top-20',
+    '-top-16',
+    '-top-28',
+  ];
+  const xAlign = [
+    'right-10',
+    'right-24',
+    'right-44',
+    'right-64',
+    'right-80',
+    'right-96',
+  ];
+  const generateAlignments = () => {
+    const alignments = [];
+    const xAlignments = [...xAlign];
+    for (let i = 0; i < 6; i++) {
+      alignments.push({ y: yAlign[i], x: randomSpliceArray(xAlignments)[0] });
+    }
+    return alignments;
+  };
 
   return (
     <div className='App'>
@@ -45,18 +44,10 @@ function App() {
           delay: 1,
         }}
         onAnimationComplete={() => setCanInit(true)}
-        className='flex flex-col relative items-center  justify-center w-full z-0 min-h-screen bg-darkest-black'
+        className='flex flex-col items-center  justify-center w-full z-0 min-h-screen bg-darkest-black'
       >
         {canInit && (
           <>
-            {lines.map(({ r, t }, i) => {
-              return (
-                <Line
-                  key={i}
-                  className={`absolute h-64 ${r} ${t} rounded-lg`}
-                />
-              );
-            })}
             <motion.div
               initial={{ y: -300 }}
               animate={{ y: 0 }}
@@ -65,10 +56,18 @@ function App() {
                 type: 'spring',
                 stiffness: 100,
               }}
-              className='flex w-3/4 flex-row gap-9 text-6xl  text-center items-center font-medium text-text-white'
+              className='relative flex w-3/4 flex-row gap-5 text-6xl  text-center items-center justify-between font-medium text-text-white'
             >
-              <div>Sites need to be...</div>
-              <TypeWriter typeContent={TYPE_WORDS} />
+              <div className='flex flex-row gap-5'>
+                <div>Sites need to be...</div>
+                <TypeWriter typeContent={TYPE_WORDS} />
+              </div>
+
+              <div className='relative bg-green-500 p-20 rounded-full'>
+                {generateAlignments().map(({ x, y }, i) => {
+                  return <Line key={i} className={`${x} ${y}`} />;
+                })}
+              </div>
             </motion.div>
           </>
         )}

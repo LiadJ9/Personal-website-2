@@ -1,5 +1,8 @@
+import tailwindGradientMaskImage from 'tailwind-gradient-mask-image';
+
 /** @type {import('tailwindcss').Config} */
 export default {
+  mode: 'jit',
   content: ['./src/**/*.{html,js,jsx}'],
   theme: {
     extend: {
@@ -20,5 +23,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [tailwindGradientMaskImage],
 };
