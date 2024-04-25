@@ -1,11 +1,19 @@
+import tailwindGradientMaskImage from 'tailwind-gradient-mask-image';
+
 /** @type {import('tailwindcss').Config} */
 export default {
+  mode: 'jit',
   content: ['./src/**/*.{html,js,jsx}'],
   theme: {
     extend: {
       colors: {
-        primary: '#ff4500',
-        secondary: '#00ff00',
+        'matte-black': '#252525',
+        'text-white': '#F4F4F4',
+        'darkest-black': '#0C0404',
+      },
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+        typewriter: ['Special Elite', 'Montserrat', 'sans-serif'],
       },
       fontSize: {
         base: '1em',
@@ -15,5 +23,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [tailwindGradientMaskImage],
 };
