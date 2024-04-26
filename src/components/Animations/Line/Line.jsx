@@ -25,7 +25,6 @@ const Line = ({ className }) => {
         x: deltaX > 0 ? distanceX : -distanceX,
         y: deltaY > 0 ? distanceY : -distanceY,
         transition: {
-          // duration: 0.3,
           transition: { staggerChildren: 0.1 },
           type: 'spring',
         },
@@ -38,7 +37,7 @@ const Line = ({ className }) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       controls.start({ x: 0, y: 0 });
-    }, 2000);
+    }, 500);
 
     return () => clearTimeout(timeout);
   }, [initialPos]);
@@ -54,7 +53,9 @@ const Line = ({ className }) => {
     >
       <motion.div
         id='inner-div'
-        className={clsx('absolute h-68 w-7 p-1 h-64 bg-text-white rounded-xl')}
+        className={clsx(
+          'absolute h-68 w-7 p-1 h-64 bg-darkest-black dark:bg-text-white rounded-xl'
+        )}
       />
     </motion.div>
   );

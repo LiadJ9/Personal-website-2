@@ -1,19 +1,9 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { randomArrayItem } from '../../utils';
-import { AUDIO_HITS } from '../../consts';
 
 const TypeWriter = ({ typeContent }) => {
   const [currentWord, setCurrentWord] = useState('');
   const [currentFont, setCurrentFont] = useState('montserrat');
-
-  const playHitSound = (shouldBell) => {
-    const hitSound = randomArrayItem(AUDIO_HITS);
-    if (!hitSound) return;
-    const audio = new Audio(hitSound);
-    audio.volume = 0.2;
-    audio.play();
-  };
 
   const typeLetters = async (word, delay) => {
     let typedWord = '';
@@ -21,7 +11,6 @@ const TypeWriter = ({ typeContent }) => {
       typedWord += letter;
       await new Promise((resolve) => setTimeout(resolve, delay));
       setCurrentWord(typedWord);
-      playHitSound();
     }
   };
 
@@ -30,7 +19,6 @@ const TypeWriter = ({ typeContent }) => {
     for (const _ of word) {
       clearedWord = clearedWord.slice(0, -1);
       await new Promise((resolve) => setTimeout(resolve, delay));
-      playHitSound();
       setCurrentWord(clearedWord);
     }
   };
@@ -51,6 +39,7 @@ const TypeWriter = ({ typeContent }) => {
   useEffect(() => {
     letterEffect(typeContent);
   }, [typeContent]);
+
   return <div className={`font-${currentFont} text-center`}>{currentWord}</div>;
 };
 
