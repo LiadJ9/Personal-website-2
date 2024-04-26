@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'organetto';
+  src: url('./assets//fonts/organetto-expregular.otf') format('truetype');
+  /* You may include more font formats here for better cross-browser support */
+}
+
 :root {
   font-family: Montserrat, Inter, system-ui, Avenir, Helvetica, Arial,
     sans-serif;
