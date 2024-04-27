@@ -20,3 +20,21 @@ export const generateAlignments = () => {
   }
   return alignments;
 };
+
+export const randomAxisArray = () => {
+  const array = [];
+  for (let i = 0; i < 7; i++) {
+    const num = Math.floor(Math.random() * 401) - 200;
+    array.push(num);
+  }
+  array.push(0);
+  return array;
+};
+
+export const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};

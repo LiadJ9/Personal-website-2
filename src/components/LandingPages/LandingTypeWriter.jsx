@@ -27,7 +27,7 @@ const LandingTypeWriter = () => {
           transition={{
             delay: 1,
             stiffness: 10,
-            duration: 0.7,
+            duration: 0.5,
             type: 'spring',
           }}
           className='flex flex-row gap-5'
