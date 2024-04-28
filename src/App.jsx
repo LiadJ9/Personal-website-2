@@ -9,7 +9,7 @@ import {
   BottomNav,
 } from './components';
 import { useGeneric } from './hooks';
-import './compiled.css';
+import './output.css';
 
 function App() {
   const { lightMode } = useGeneric();

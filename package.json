@@ -6,7 +6,7 @@
   "homepage": "https://liadj9.github.io/Personal-website-2/",
   "scripts": {
     "dev": "vite",
-    "tailwatch": "tailwindcss -i ./src/index.css -o ./src/compiled.css --watch",
+    "tailwatch": "tailwindcss -i ./src/index.css -o ./src/output.css --watch",
     "build": "vite build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
