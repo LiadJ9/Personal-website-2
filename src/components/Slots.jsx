@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useAnimation, useInView, motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 import Button from './Button';
@@ -6,21 +6,27 @@ import { shuffleArray } from '../utils';
 import { SPIN_ANIMATION } from '../consts';
 
 const SlotMachine = ({ itemList }) => {
+  const [itemLists, setItemList] = useState(itemList);
   const viewRef = useRef(null);
   const isInView = useInView(viewRef);
   const controls = useAnimation();
+
   useEffect(() => {
     if (isInView) {
-      controls.start({
-        y: SPIN_ANIMATION,
-      });
+      startAnimation();
     }
   }, [isInView]);
+
+  const startAnimation = () => {
+    itemList.map((items) => shuffleArray(items));
+    setItemList([...itemList]);
+    controls.start({ y: SPIN_ANIMATION });
+  };
 
   return (
     <div className='flex flex-row items-center gap-16'>
       <div className='flex flex-row overflow-hidden gap-10 h-fit'>
-        {itemList.map((items, index) => (
+        {itemLists.map((items, index) => (
           <div
             ref={viewRef}
             className='flex flex-col gap-5 size-44 overflow-hidden'
@@ -36,7 +42,7 @@ const SlotMachine = ({ itemList }) => {
               }}
               className='flex flex-col gap-10'
             >
-              {shuffleArray(items).map((Icon, index) => (
+              {items.map((Icon, index) => (
                 <motion.div key={index} className='text-6xl'>
                   <Icon className='text-text-white size-44' />
                 </motion.div>
@@ -46,10 +52,13 @@ const SlotMachine = ({ itemList }) => {
         ))}
       </div>
       <Button
-        onClick={() => controls.start({ y: SPIN_ANIMATION })}
+        onClick={startAnimation}
         className={'material-symbols-outlined text-6xl text-text-white'}
+        aria-label='refresh-btn'
       >
-        <motion.div whileHover={{ rotate: 90 }}>refresh</motion.div>
+        <motion.div aria-label='refresh-btn' whileHover={{ rotate: 90 }}>
+          refresh
+        </motion.div>
       </Button>
     </div>
   );
