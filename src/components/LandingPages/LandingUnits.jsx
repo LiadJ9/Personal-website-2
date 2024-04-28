@@ -8,11 +8,11 @@ const LandingUnits = () => {
   const containerRef = useRef(null);
 
   return (
-    <div className='bg-gradient-to-b from-slate-100 to-m-blue dark:bg-gradient-to-b  dark:from-darkest-black dark:to-m-blue w-full h-screen flex flex-col items-center'>
+    <div className='bg-gradient-to-b from-text-white to-cyan-600 dark:bg-gradient-to-b  dark:from-darkest-black dark:to-m-blue w-full h-screen flex flex-col items-center'>
       <div className='dark:bg-darkest-black  w-full h-40 gradient-mask-b-10'></div>
-      <div className='flex flex-row w-3/4 items-center justify-between'>
+      <div className='flex flex-row w-3/4 items-center dark:text-text-white text-cyan-800 justify-between'>
         <motion.div
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.3 }}
           initial={{ opacity: 0, x: 100, y: 0 }}
           whileInView={{ opacity: 1, x: 0, y: 0 }}
           className={clsx('flex flex-col w-full gap-5', {
