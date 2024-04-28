@@ -10,4 +10,5 @@ export default defineConfig({
       './runtimeConfig': './runtimeConfig.browser',
     },
   },
+  base: '/Personal-website-2/',
 });
