@@ -1,4 +1,4 @@
-import { X_ALIGN, Y_ALIGN } from '../consts';
+import { X_ALIGN, Y_ALIGN } from 'consts';
 
 export const randomArrayItem = (arr) => {
   const randomItem = arr[Math.floor(Math.random() * arr.length)];

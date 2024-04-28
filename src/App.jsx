@@ -7,8 +7,8 @@ import {
   LandingStacks,
   LandingDesigns,
   BottomNav,
-} from './components';
-import { useGeneric } from './hooks';
+} from 'components';
+import { useGeneric } from 'hooks';
 import './output.css';
 
 function App() {

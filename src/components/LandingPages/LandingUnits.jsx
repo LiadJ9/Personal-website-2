@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
-import { RAINBOW_GRADIENTS, UNITS } from '../../consts';
+import { RAINBOW_GRADIENTS, UNITS } from 'consts';
 
 const LandingUnits = () => {
   const [rainbows, setRainbows] = useState(false);

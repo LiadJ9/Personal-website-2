@@ -1,5 +1,5 @@
-import { useGeneric } from '../hooks';
-import { Button } from '../components';
+import { useGeneric } from 'hooks';
+import { Button } from 'components';
 
 const NavBar = () => {
   const { lightMode, setLightMode } = useGeneric();

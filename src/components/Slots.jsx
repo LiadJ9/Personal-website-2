@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { useAnimation, useInView, motion } from 'framer-motion';
 import PropTypes from 'prop-types';
-import Button from './Button';
-import { shuffleArray } from '../utils';
-import { SPIN_ANIMATION } from '../consts';
+import { Button } from 'components';
+import { shuffleArray } from 'utils';
+import { SPIN_ANIMATION } from 'consts';
 
 const SlotMachine = ({ itemList }) => {
   const [itemLists, setItemList] = useState(itemList);

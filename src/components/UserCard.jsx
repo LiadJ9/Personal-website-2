@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { randomArrayItem } from '../utils';
-import { RAINBOW_GRADIENTS } from '../consts';
+import { randomArrayItem } from 'utils';
+import { RAINBOW_GRADIENTS } from 'consts';
 
 const UserCard = ({ title, text, className }) => {
   const randomGradient = randomArrayItem(RAINBOW_GRADIENTS);

@@ -1,5 +1,5 @@
-import { CSS, DBS, FRAMEWORKS, LANGUAGES } from '../../consts';
-import { Slots } from '..';
+import { Slots } from 'components';
+import { CSS, DBS, FRAMEWORKS, LANGUAGES } from 'consts';
 
 const LandingStacks = () => {
   return (

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { BOX_CONTENTS } from '../../consts';
-import Tab from '../Tab';
+import { BOX_CONTENTS } from 'consts';
+import { Tab } from 'components';
 
 const LandingDesigns = () => {
   return (

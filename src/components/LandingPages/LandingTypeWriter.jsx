@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
-import { generateAlignments } from '../../utils';
-import { Line } from '../Animations';
-import { TYPE_WORDS } from '../../consts';
-import { TypeWriter } from '../index';
+import { Line, TypeWriter } from 'components';
+import { generateAlignments } from 'utils';
+import { TYPE_WORDS } from 'consts';
 
 const LandingTypeWriter = () => {
   return (
