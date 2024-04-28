@@ -3,10 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://liadj9.github.io/Personal-website-2/",
   "scripts": {
     "dev": "vite",
     "tailwatch": "tailwindcss -i ./src/index.css -o ./src/compiled.css --watch",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
