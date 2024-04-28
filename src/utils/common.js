@@ -1,4 +1,4 @@
-import { X_ALIGN, Y_ALIGN } from 'consts';
+import { X_ALIGN, X_ALIGN_MOBILE, Y_ALIGN } from 'consts';
 
 export const randomArrayItem = (arr) => {
   const randomItem = arr[Math.floor(Math.random() * arr.length)];
@@ -12,11 +12,19 @@ export const randomSpliceArray = (arr) => {
   return null;
 };
 
-export const generateAlignments = () => {
+export const generateAlignments = (isMobile) => {
   const alignments = [];
   const xAlignments = [...X_ALIGN];
+  const xMobileAlignments = [...X_ALIGN_MOBILE];
   for (let i = 0; i < 6; i++) {
-    alignments.push({ y: Y_ALIGN[i], x: randomSpliceArray(xAlignments)[0] });
+    const yPos = Y_ALIGN[i];
+    var xPos;
+    if (isMobile) {
+      xPos = randomSpliceArray(xMobileAlignments)[0];
+    } else {
+      xPos = randomSpliceArray(xAlignments)[0];
+    }
+    alignments.push({ y: yPos, x: xPos });
   }
   return alignments;
 };

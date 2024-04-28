@@ -15,6 +15,15 @@ export const X_ALIGN = [
   'right-96',
 ];
 
+export const X_ALIGN_MOBILE = [
+  'right-6',
+  'right-16',
+  'right-24',
+  'right-32',
+  'right-40',
+  'right-48',
+];
+
 export const RAINBOW_GRADIENTS = [
   'bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400',
   'bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500',
