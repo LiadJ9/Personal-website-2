@@ -7,6 +7,7 @@ const Button = ({
   className,
   onClick,
   type = 'button',
+  ariaLabel,
 }) => {
   const buttonStyles = {
     purple: 'bg-purple-500 hover:bg-purple-700 text-white font-bold rounded',
@@ -21,6 +22,7 @@ const Button = ({
       })}
       onClick={onClick}
       type={type}
+      aria-label={ariaLabel}
     >
       {children}
     </button>
@@ -33,6 +35,8 @@ Button.propTypes = {
   children: PropTypes.node,
   onClick: PropTypes.func,
   type: PropTypes.string,
+  props: PropTypes.any,
+  ariaLabel: PropTypes.string,
 };
 
 export default Button;

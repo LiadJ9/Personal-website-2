@@ -20,6 +20,10 @@ export default {
         montserrat: ['Montserrat', 'sans-serif'],
         typewriter: ['Special Elite', 'Montserrat', 'sans-serif'],
       },
+      height: {
+        '60vh': '60vh',
+        '80vh': '80vh',
+      },
       fontSize: {
         base: '1em',
         lg: '1.3em',

@@ -5,6 +5,8 @@ import {
   LandingTypeWriter,
   LandingUnits,
   LandingStacks,
+  LandingDesigns,
+  BottomNav,
 } from './components';
 import { useGeneric } from './hooks';
 import './compiled.css';
@@ -27,13 +29,15 @@ function App() {
           delay: 1,
         }}
         onAnimationComplete={() => setCanInit(true)}
-        className='flex flex-col w-full z-0 min-h-screen  bg-text-white dark:bg-darkest-black'
+        className='relative flex flex-col w-full z-0 min-h-screen bg-text-white dark:bg-darkest-black'
       >
         {canInit && (
           <>
             <LandingTypeWriter />
             <LandingUnits />
+            <LandingDesigns />
             <LandingStacks />
+            <BottomNav />
           </>
         )}
       </motion.div>
