@@ -45,16 +45,19 @@ const Line = ({ className }) => {
   return (
     <motion.div
       id='outer-div'
-      className={clsx('absolute flex items-center justify-center w-10 h-80', {
-        [className]: className,
-      })}
+      className={clsx(
+        'absolute flex items-center justify-center w-4 h-40 md:w-8 md:h-44 lg:w-8 lg:h-64 xl:w-10 xl:h-80',
+        {
+          [className]: className,
+        }
+      )}
       animate={controls}
       onMouseMove={handleMouseMove}
     >
       <motion.div
         id='inner-div'
         className={clsx(
-          'absolute h-68 w-7 p-1 h-64 bg-darkest-black dark:bg-text-white rounded-xl'
+          'absolute p-1 w-4 h-40 lg:w-5 lg:h-52 xl:w-7 xl:h-64 bg-darkest-black dark:bg-text-white rounded-xl'
         )}
       />
     </motion.div>

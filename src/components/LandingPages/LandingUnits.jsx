@@ -8,9 +8,9 @@ const LandingUnits = () => {
   const containerRef = useRef(null);
 
   return (
-    <div className='bg-gradient-to-b from-text-white to-cyan-600 dark:bg-gradient-to-b  dark:from-darkest-black dark:to-m-blue w-full h-80vh flex flex-col gap-36  items-center'>
+    <div className='bg-gradient-to-b from-text-white to-cyan-600 dark:bg-gradient-to-b  dark:from-darkest-black dark:to-m-blue w-full h-auto lg:h-80vh flex flex-col gap-12 lg:gap-36  items-center'>
       <div className='dark:bg-darkest-black  w-full h-40 gradient-mask-b-10'></div>
-      <div className='flex flex-row w-3/4 items-center dark:text-text-white text-cyan-800 justify-between'>
+      <div className='flex flex-col lg:flex-row w-5/6 lg:w-4/5 5 items-center dark:text-text-white text-cyan-800 justify-between'>
         <motion.div
           transition={{ delay: 0.3 }}
           initial={{ opacity: 0 }}
@@ -20,10 +20,10 @@ const LandingUnits = () => {
             'text-transparent bg-clip-text': rainbows !== false,
           })}
         >
-          <div className='text-xxl'>
+          <div className='text-xl lg:text-xxl'>
             Creating beautiful sites that just work.
           </div>
-          <div className='text-xl max-w-3xl h-fit'>
+          <div className='text-lg lg:text-xl  max-w-3xl h-fit'>
             I specialize in tailoring each site to precise 1/1 specifications,
             ensuring that everything aligns perfectly with the design vision.
             Whether its executing intricate designs or implementing
@@ -33,7 +33,7 @@ const LandingUnits = () => {
         </motion.div>
         <div
           ref={containerRef}
-          className='flex flex-col relative w-2/4 h-80 border-text-white'
+          className='flex flex-col relative w-5/6 lg:w-2/4 h-80 border-text-white'
         >
           {UNITS.map(
             ({ unit, hoverColor, size = 'text-6xl', pos: { x, y } }, index) => (
