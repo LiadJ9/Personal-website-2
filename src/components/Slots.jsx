@@ -44,7 +44,7 @@ const SlotMachine = ({ itemList }) => {
             >
               {items.map((Icon, index) => (
                 <motion.div key={index} className='text-6xl'>
-                  <Icon className='text-text-white size-20 lg:size-44' />
+                  <Icon className='text-text-white size-14 sm:size-20 lg:size-44' />
                 </motion.div>
               ))}
             </motion.div>
