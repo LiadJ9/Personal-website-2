@@ -19,7 +19,7 @@ const Line = ({ className }) => {
     } else {
       const deltaX = clientX - x;
       const deltaY = clientY - y;
-      const divider = isTouch ? 15 : 30;
+      const divider = isTouch ? 8 : 30;
       const distanceX = Math.abs(innerDivX.get() - clientX / divider);
       const distanceY = Math.abs(innerDivY.get() - clientY / divider);
       controls.start({
@@ -47,7 +47,7 @@ const Line = ({ className }) => {
     <motion.div
       id='outer-div'
       className={clsx(
-        'absolute flex items-center justify-center w-4 h-40 md:w-8 md:h-44 lg:w-8 lg:h-64 xl:w-10 xl:h-80',
+        'absolute flex items-center justify-center w-10 h-40 md:w-10 md:h-44 lg:w-8 lg:h-64 xl:w-10 xl:h-80',
         {
           [className]: className,
         }
@@ -58,9 +58,7 @@ const Line = ({ className }) => {
     >
       <motion.div
         id='inner-div'
-        className={clsx(
-          'absolute p-1 w-4 h-40 lg:w-5 lg:h-52 xl:w-7 xl:h-64 bg-darkest-black dark:bg-text-white rounded-xl'
-        )}
+        className='absolute p-1 w-4 h-40 lg:w-5 lg:h-52 xl:w-7 xl:h-64 bg-darkest-black dark:bg-text-white rounded-xl'
       />
     </motion.div>
   );
