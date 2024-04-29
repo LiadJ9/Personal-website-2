@@ -29,7 +29,7 @@ const SlotMachine = ({ itemList }) => {
         {itemLists.map((items, index) => (
           <div
             ref={viewRef}
-            className='flex flex-col gap-5 size-44 overflow-hidden'
+            className='flex flex-col gap-5 size-14 sm:size-20 lg:size-44 overflow-hidden'
             key={index}
           >
             <motion.div
@@ -44,7 +44,7 @@ const SlotMachine = ({ itemList }) => {
             >
               {items.map((Icon, index) => (
                 <motion.div key={index} className='text-6xl'>
-                  <Icon className='text-text-white size-44' />
+                  <Icon className='text-text-white size-20 lg:size-44' />
                 </motion.div>
               ))}
             </motion.div>

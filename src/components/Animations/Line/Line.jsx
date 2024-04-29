@@ -50,6 +50,7 @@ const Line = ({ className }) => {
       })}
       animate={controls}
       onMouseMove={handleMouseMove}
+      onTouchMove={handleMouseMove}
     >
       <motion.div
         id='inner-div'
