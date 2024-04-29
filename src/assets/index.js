@@ -1,1 +1,0 @@
-export { OrganettoRegular } from './fonts';

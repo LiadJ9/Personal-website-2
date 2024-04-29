@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import { motion, useAnimation, useMotionValue } from 'framer-motion';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
+import { useGeneric } from 'hooks';
 
 const Line = ({ className }) => {
+  const { isMobile } = useGeneric();
   const [initialPos, setInitialPos] = useState({ x: null, y: null });
   const innerDivX = useMotionValue(0);
   const innerDivY = useMotionValue(0);
@@ -11,7 +13,7 @@ const Line = ({ className }) => {
 
   const handleMouseMove = (e) => {
     const isTouch = e?.type === 'touchmove';
-    const source = e?.touches[0] || e;
+    const source = isTouch ? e.touches[0] : e;
     const { clientX, clientY } = source;
     const { x, y } = initialPos;
     if (x === null && y === null) {
@@ -53,8 +55,8 @@ const Line = ({ className }) => {
         }
       )}
       animate={controls}
-      onMouseMove={handleMouseMove}
-      onTouchMove={handleMouseMove}
+      onMouseMove={isMobile ? null : handleMouseMove}
+      onTouchMove={!isMobile ? null : handleMouseMove}
     >
       <motion.div
         id='inner-div'

@@ -5,7 +5,7 @@ import { Tab } from 'components';
 const LandingDesigns = () => {
   return (
     <div className='flex flex-col justify-center items-center w-full h-fit xl:h-80vh bg-gradient-to-b from-cyan-600  via-cyan-700 to-cyan-600 dark:from-m-blue dark:via-cyan-700 dark:to-cyan-800'>
-      <div className='flex flex-col-reverse lg:flex-row w-11/12 lg:w-5/6 py-16 xl:py-0 gap-10 justify-between items-center'>
+      <div className='flex flex-col-reverse lg:flex-row w-11/12 lg:w-11/12 xl:w-5/6 py-16 xl:py-0 gap-10 justify-between items-center'>
         <div className='flex max-w-xl flex-wrap gap-5'>
           <Tab>
             {BOX_CONTENTS.map(({ Component, props }, index) => (

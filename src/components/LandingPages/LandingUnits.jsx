@@ -9,8 +9,8 @@ const LandingUnits = () => {
 
   return (
     <div className='bg-gradient-to-b from-text-white to-cyan-600 dark:bg-gradient-to-b  dark:from-darkest-black dark:to-m-blue w-full h-auto lg:h-80vh flex flex-col gap-12 lg:gap-36  items-center'>
-      <div className='dark:bg-darkest-black  w-full h-40 gradient-mask-b-10'></div>
-      <div className='flex flex-col lg:flex-row w-5/6 lg:w-4/5 5 items-center dark:text-text-white text-cyan-800 justify-between'>
+      <div className='dark:bg-darkest-black  w-full h-20 gradient-mask-b-10'></div>
+      <div className='flex flex-col lg:flex-row w-5/6 lg:w-11/12 xl:w-5/6 items-center dark:text-text-white text-cyan-800 justify-between'>
         <motion.div
           transition={{ delay: 0.3 }}
           initial={{ opacity: 0 }}

@@ -8,7 +8,7 @@ const LandingTypeWriter = () => {
   const { isMobile } = useGeneric();
 
   return (
-    <div className='flex flex-col justify-center items-center w-full h-80vh lg:h-screen'>
+    <div className='flex flex-col justify-center items-center w-full pt-32 h-80vh  xl:pt-10 xl:h-80vh'>
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -34,7 +34,7 @@ const LandingTypeWriter = () => {
           }}
           className='flex flex-col min-h-28 lg:flex-row  gap-5'
         >
-          <div>Sites need to be...</div>
+          <div>Sites need to be </div>
           <TypeWriter typeContent={TYPE_WORDS} />
         </motion.div>
 

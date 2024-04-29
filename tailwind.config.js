@@ -16,7 +16,6 @@ export default {
       },
 
       fontFamily: {
-        organetto: ['organetto', 'Montserrat', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
         typewriter: ['Special Elite', 'Montserrat', 'sans-serif'],
       },
