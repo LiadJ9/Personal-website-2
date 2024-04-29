@@ -10,17 +10,18 @@ const Line = ({ className }) => {
   const controls = useAnimation();
 
   const handleMouseMove = (e) => {
-    const { clientX, clientY } = e;
+    const isTouch = e?.type === 'touchmove';
+    const source = e?.touches[0] || e;
+    const { clientX, clientY } = source;
     const { x, y } = initialPos;
     if (x === null && y === null) {
       setInitialPos({ x: clientX, y: clientY });
     } else {
       const deltaX = clientX - x;
       const deltaY = clientY - y;
-
-      const distanceX = Math.abs(innerDivX.get() - clientX / 30);
-      const distanceY = Math.abs(innerDivY.get() - clientY / 30);
-
+      const divider = isTouch ? 15 : 30;
+      const distanceX = Math.abs(innerDivX.get() - clientX / divider);
+      const distanceY = Math.abs(innerDivY.get() - clientY / divider);
       controls.start({
         x: deltaX > 0 ? distanceX : -distanceX,
         y: deltaY > 0 ? distanceY : -distanceY,
