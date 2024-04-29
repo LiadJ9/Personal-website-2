@@ -5,7 +5,19 @@ const GenericContext = createContext({});
 
 export const GenericContextProvider = ({ children }) => {
   const [lightMode, setLightMode] = useState(null);
-  const isMobile = window.innerWidth <= 768;
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const storageLight = JSON.parse(localStorage.getItem('light-mode'));

@@ -24,8 +24,8 @@ const SlotMachine = ({ itemList }) => {
   };
 
   return (
-    <div className='flex flex-row items-center gap-16'>
-      <div className='flex flex-row overflow-hidden gap-10 h-fit'>
+    <div className='flex flex-row items-center gap-8 lg:gap-16'>
+      <div className='flex flex-row overflow-hidden gap-2 lg:gap-10 h-fit'>
         {itemLists.map((items, index) => (
           <div
             ref={viewRef}
@@ -53,7 +53,9 @@ const SlotMachine = ({ itemList }) => {
       </div>
       <Button
         onClick={startAnimation}
-        className={'material-symbols-outlined text-6xl text-text-white'}
+        className={
+          'material-symbols-outlined text-xl lg:text-6xl text-text-white'
+        }
         aria-label='refresh-btn'
       >
         <motion.div aria-label='refresh-btn' whileHover={{ rotate: 90 }}>
