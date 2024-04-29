@@ -8,7 +8,7 @@ const LandingTypeWriter = () => {
   const { isMobile } = useGeneric();
 
   return (
-    <div className='flex flex-col justify-center items-center w-full h-80vh lg:max-2xl:h-screen 2xl:h-screen'>
+    <div className='flex flex-col justify-center items-center w-full h-80vh lg:h-screen'>
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -17,7 +17,7 @@ const LandingTypeWriter = () => {
           type: 'spring',
           stiffness: 100,
         }}
-        className='relative flex w-4/5 flex-col xl:flex-row gap-44 md:max-lg:gap-32 xl:max-2xl:gap-5 2xl:gap-5 text-xl xl:text-4xl 2xl:text-5xl text-center items-center justify-between font-medium text-darkest-black dark:text-text-white'
+        className='relative flex w-4/5 flex-col xl:flex-row gap-44 md:gap-32 xl:gap-5 text-xl xl:text-4xl 2xl:text-5xl text-center items-center justify-between font-medium text-darkest-black dark:text-text-white'
       >
         <motion.div
           initial={{ opacity: 0, x: -100, y: -100 }}
@@ -32,13 +32,13 @@ const LandingTypeWriter = () => {
             duration: 0.3,
             type: 'spring',
           }}
-          className='flex flex-col min-h-28 lg:max-2xl:flex-row 2xl:flex-row gap-5'
+          className='flex flex-col min-h-28 lg:flex-row  gap-5'
         >
           <div>Sites need to be...</div>
           <TypeWriter typeContent={TYPE_WORDS} />
         </motion.div>
 
-        <div className='flex relative ml-36 p-8 bg-green-500 md:max-lg:ml-64 xl:p-20 lg:p-16 md:p-12 rounded-full'>
+        <div className='flex relative ml-36 p-8 bg-green-500 md:ml-64 xl:p-20 lg:p-16 md:p-12 rounded-full'>
           {generateAlignments(isMobile).map(({ x, y }, i) => {
             return <Line key={i} className={`${x} ${y}`} />;
           })}
